@@ -1,0 +1,57 @@
+{
+  "name": "iemunity",
+  "version": "1.1.0",
+  "description": "IEMunity — Frequency response comparison & device PEQ tool for IEMs and headphones — 10,000+ measurements, AutoEQ, hardware DSP control",
+  "main": "out/main/index.js",
+  "author": "nashr",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "dist": "electron-vite build && electron-builder"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "vite": "^5.4.11"
+  },
+  "build": {
+    "appId": "com.getnotroll.iemunity",
+    "productName": "IEMunity",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "getnotroll-hub",
+        "repo": "iemunity"
+      }
+    ],
+    "icon": "build/icon.ico",
+    "files": [
+      "out/**",
+      "data/**"
+    ],
+    "extraResources": [
+      {
+        "from": "data",
+        "to": "data"
+      }
+    ],
+    "asarUnpack": [
+      "data/**"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    }
+  },
+  "allowScripts": {
+    "electron@33.4.11": true
+  }
+}
